@@ -1,0 +1,5 @@
+@mixin max-width($width) {
+    max-width: $width + px;
+    margin-right: auto;
+    margin-left: auto;
+}

@@ -1,0 +1,18 @@
+.SearchResults {
+    padding-top: calc(174px + 1rem);
+    &__images {
+        display: flex;
+        flex-wrap: wrap;
+        max-width: 900px;
+        margin-right: auto;
+        margin-left: auto;
+    }
+}
+
+.SearchResult {
+    width: 33%;
+    padding: .5rem;
+    img {
+        max-width: 100%;
+    }
+}

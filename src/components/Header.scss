@@ -1,0 +1,15 @@
+@import '../scss/mixins';
+
+.Header {
+    background-color: #222222;
+    color: white;
+    padding: 2rem 2rem 3rem;
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    &__content {
+        @include max-width(1250);
+        text-align: center;
+    }
+}
