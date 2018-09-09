@@ -4,7 +4,7 @@
 
 - [x] Base Project with Visual Components, Redux, Router
 - [x] Integrate Flickr API (Make sure to NOT commit API_KEY)
-- [ ] Save Search Results + Show them when searching
+- [x] Save Search Results + Show them when searching
 - [ ] Load More Results (Infinite Scrolling)
 - [ ] Show modal with caption
 
@@ -24,6 +24,7 @@
 - [ ] Masonry layout either using three columns or the library
 - [ ] OLDDDDDDDDD Browser support
 - [ ] Tests (why is this in just for fun?)
+- [ ] Styled componemts
 
 Sample env.js
 ```

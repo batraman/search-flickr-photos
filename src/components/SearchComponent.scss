@@ -1,0 +1,34 @@
+.SearchComponent {
+    $self: &;
+    position: relative;
+    &__input:focus + #{$self}__results {
+        display: block;
+    }
+    &__results {
+        position: absolute;
+        display: none;
+        top: 100%;
+        margin-top: .5rem;
+        left: 0;
+        right: 0;
+        box-shadow: 0 3px 7px 0 rgba(0,0,0,.2);
+        background-color: #fff;
+        border-radius: 4px;
+        padding: .5rem;
+        text-align: left;
+        &:hover {
+            display: block;
+        }
+    }
+    &__result {
+        padding: .5rem 1rem;
+        color: rgba(0,0,0,.75);
+        cursor: pointer;
+        &:hover {
+            background-color: #ddd;
+        }
+    }
+    &__clearResults {
+        text-align: right;
+    }
+}
