@@ -12,7 +12,18 @@
 .SearchResult {
     width: 33%;
     padding: .5rem;
+    cursor: pointer;
     img {
         max-width: 100%;
     }
+}
+
+.Modal__body {
+    img {
+        max-width: 100%;
+    }
+}
+
+.Modal__imageTitle {
+    padding-top: .5rem;
 }

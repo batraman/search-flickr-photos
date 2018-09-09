@@ -6,7 +6,7 @@
 - [x] Integrate Flickr API (Make sure to NOT commit API_KEY)
 - [x] Save Search Results + Show them when searching
 - [x] Load More Results (Infinite Scrolling)
-- [ ] Show modal with caption
+- [x] Show modal with caption
 
 ## Later:
 - [ ] Explain why search results are not shown when typing
