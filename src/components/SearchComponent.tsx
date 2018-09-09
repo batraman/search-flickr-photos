@@ -67,6 +67,7 @@ class SearchComponent extends React.Component<Props, State> {
         (document as any).querySelector('.SearchComponent__input').blur();
     }
     renderPreviousSearches = () => {
+        // Consider if a sort function is needed
         const { previousSearches, clearResultsDispatch } = this.props;
         const { query } = this.state;
         if (!query.length || !previousSearches.size) {

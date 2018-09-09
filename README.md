@@ -5,7 +5,7 @@
 - [x] Base Project with Visual Components, Redux, Router
 - [x] Integrate Flickr API (Make sure to NOT commit API_KEY)
 - [x] Save Search Results + Show them when searching
-- [ ] Load More Results (Infinite Scrolling)
+- [x] Load More Results (Infinite Scrolling)
 - [ ] Show modal with caption
 
 ## Later:
