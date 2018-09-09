@@ -52,13 +52,21 @@ class SearchComponent extends React.Component<Props, State> {
     handleKeyDown = (e: React.KeyboardEvent<HTMLInputElement>) => {
         const { fetchSearchResultsDispatch } = this.props;
         const query = (e.target as HTMLInputElement).value;
+        // Search is initiaed only when the user presses enter or clickes on a previous search
+        // Calling the Flickr API on each keystroke even with a throttle would lead to more API failures
+        // as the rate limiting is 3600 API calls per hour for a key which translates to 1 API call per second
+        // when there are multiple users using the website, this rate limiting would kick in place too soon
+        // 
+        // Also each payload can have images in multiple MBs, so eager loading the images wouldn't be useful.
+        // Even the flickr website doesn't search too eagerly and Google on desktop has stopped doing that 
+        // to be in line with the mobile experience
+        // Source: https://www.theverge.com/2017/7/26/16034844/google-kills-off-instant-search-for-mobile-consistency
         if (e.keyCode === 13 && query.length) {
             fetchSearchResultsDispatch(query);
             (e.target as HTMLInputElement).blur();
         }
     }
     searchPreviousQuery = (query: string) => {
-        console.log(query);
         const { fetchSearchResultsDispatch } = this.props;
         this.setState({
             query

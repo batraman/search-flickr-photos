@@ -1,21 +1,28 @@
 import api, { constructSearchURL } from '../utils/axiosInstance';
 import { Dispatch } from 'redux';
 import { SearchActions } from '../constants/ActionTypes';
-// import { CrashReporter } from '../libs/crashReporter';
 
 function updateSearchQueries (searchArray: any, newQuery: string) {
-    // Bug in TS to not allow normal spread on Set
-    const newSavedSearches = [...Array.from(searchArray), newQuery];
+    // Bug in TS doesn't allow normal spread on Set
+    let newSavedSearches: any = [...Array.from(searchArray)];
+    if (!newSavedSearches.includes(newQuery.toLowerCase())) {
+        newSavedSearches.push(newQuery.toLowerCase());
+    }
     localStorage.setItem('previousSearches', JSON.stringify(newSavedSearches));
 }
 
-// Optimize already fetched queries
 export const fetchSearchResults = (searchQuery: string) => (dispatch: Dispatch, getState: any) => {
     const previousSearches = getState().search.previousSearches;
+    const lastSearchQuery = getState().search.searchQuery;
+    // Optimizing already fetched query - 
+    // Use case: user tried to press enter twice
+    if (lastSearchQuery === searchQuery) {
+        return;
+    }
     updateSearchQueries(previousSearches, searchQuery);
     dispatch({
         type: SearchActions.FETCH_RESULTS,
-        searchQuery,
+        searchQuery: searchQuery.toLowerCase(),
         pageNumber: 1
     });
     const searchURL = constructSearchURL({searchQuery, pageNumber: 1});

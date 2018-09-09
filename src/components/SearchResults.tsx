@@ -14,6 +14,7 @@ interface MapStateToProps {
     pages: number;
     pageNumber: number;
     isFetching: boolean;
+    searchQuery: string;
 }
 
 interface MapDispatchToProps extends MapStateToProps {
@@ -36,7 +37,21 @@ class SearchResults extends React.Component<Props, State> {
         };
     }
     render() {
-        const { pages, pageNumber, isFetching } = this.props;
+        const { pages, pageNumber, isFetching, searchQuery, searchResults } = this.props;
+        if (!searchQuery) {
+            return (
+                <div className="BeginSearch">
+                    Type in a query and press enter to begin search...
+                </div>
+            );
+        }
+        if (searchQuery && !isFetching && !searchResults.length) {
+            return (
+                <div className="EmptySearch">
+                    No Results Found
+                </div>
+            );
+        }
         return (
             <div className="SearchResults">
                 <InfiniteScroll
@@ -82,7 +97,7 @@ class SearchResults extends React.Component<Props, State> {
             };
         });
     }
-    // This component sucks need to delay isFetching to make it work fine
+    // This component sucks need to delay isFetching to make it work fine when scrolling too fast
     loadMoreImages = () => {
         const { fetchMoreSearchResultsDispatch } = this.props;
         fetchMoreSearchResultsDispatch();
@@ -117,12 +132,13 @@ class SearchResults extends React.Component<Props, State> {
 }
 
 function mapStateToProps (state: any) {
-    const { searchResults, pages, pageNumber, isFetching } = state.search;
+    const { searchResults, pages, pageNumber, isFetching, searchQuery } = state.search;
     return {
         searchResults,
         pages,
         pageNumber,
-        isFetching
+        isFetching,
+        searchQuery
     };
 }
 

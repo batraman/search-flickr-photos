@@ -1,16 +1,16 @@
 import * as React from 'react';
 import { BrowserRouter, Route, Switch } from 'react-router-dom';
-// import { CrashReporter } from './libs/crashReporter';
 import { Provider } from 'react-redux';
 import { createStore, applyMiddleware, combineReducers } from 'redux';
 import thunk from 'redux-thunk';
-import SearchPage from './workspaces/SearchPage';
-import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
 
-// CrashReporter.initialize(); // Initializes Sentry
+import SearchPage from './workspaces/SearchPage';
+import PageNotFound from './components/PageNotFound';
 
 import search from './reducers/search';
+
+import 'bootstrap/dist/css/bootstrap.css';
+import './App.css';
 
 const middlewares = [thunk];
 
@@ -34,7 +34,8 @@ class App extends React.Component {
         <Provider store={store}>
               <BrowserRouter>
                 <Switch>
-                    <Route path="/" component={SearchPage} />
+                    <Route exact={true} path="/" component={SearchPage} />
+                    <Route component={PageNotFound} />
                 </Switch>
             </BrowserRouter>
         </Provider>

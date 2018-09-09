@@ -13,6 +13,4 @@ export const constructPhotoURL = ({farm, server, id, secret}) => {
     return `https://farm${farm}.staticflickr.com/${server}/${id}_${secret}.jpg`;
 }
 
-
-
 export default api;
