@@ -3,6 +3,11 @@ import { connect } from 'react-redux';
 import { constructPhotoURL } from '../utils/axiosInstance';
 import { fetchMoreSearchResults } from '../actions/search';
 import { Modal, ModalBody } from 'reactstrap';
+import Masonry from 'react-masonry-component';
+
+const masonryOptions = {
+    transitionDuration: 0
+};
 
 // Fix definitions file
 const InfiniteScroll = require('react-infinite-scroller');
@@ -59,9 +64,14 @@ class SearchResults extends React.Component<Props, State> {
                     hasMore={!isFetching && (pages > pageNumber)}
                     initialLoad={false}
                 >
-                <div className="SearchResults__images">
+                <Masonry
+                    className="SearchResults__images" // default ''
+                    options={masonryOptions} // default {}
+                    disableImagesLoaded={false} // default false
+                    updateOnEachImageLoad={false} // default false and works only if disableImagesLoaded is false
+                >
                     {this.renderSearchResults()}
-                </div>
+                </Masonry>
                 </InfiniteScroll>
                 <Modal isOpen={this.state.isImageModalOpen} toggle={this.toggleModalState}>
                     <ModalBody className="Modal__body">

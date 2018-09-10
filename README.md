@@ -46,7 +46,8 @@ module.exports = ENV;
 
 ## Just for fun:
 - [ ] Cache search results for 24 hours
-- [ ] ~~Masonry layout either~~ (sucks when it comes to normal layout) using three columns or the library
+- [x] Masonry layout either(sucks when it comes to normal layout) using three columns or the library
+       - Can add some nice animations too
 - [ ] OLDDDDDDDDD Browser support
 - [ ] Tests (why is this in just for fun?)
 - [ ] Styled components

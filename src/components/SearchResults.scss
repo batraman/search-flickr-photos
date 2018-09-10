@@ -25,6 +25,9 @@
     text-align: center;
     img {
         max-width: 100%;
+        min-height: 250px;
+        background-color: #ddd;
+        // See if this distorts the images in any way
     }
     @media (max-width: 1023px) {
         width: 50%;
