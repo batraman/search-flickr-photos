@@ -1,7 +1,7 @@
 import * as React from 'react';
 import SearchComponent from './SearchComponent';
 
-import './Header.css';
+import './Header.scss';
 
 class Header extends React.Component {
     render () {

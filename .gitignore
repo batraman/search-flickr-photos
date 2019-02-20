@@ -12,6 +12,7 @@ package-lock.json
 # environment file for various clients
 /env.*.js
 /env.js
+.env
 
 # Dist folder
 /dist/

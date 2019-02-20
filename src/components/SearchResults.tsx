@@ -12,7 +12,7 @@ const masonryOptions = {
 // Fix definitions file
 const InfiniteScroll = require('react-infinite-scroller');
 
-import './SearchResults.css';
+import './SearchResults.scss';
 
 interface MapStateToProps {
     searchResults: any[];

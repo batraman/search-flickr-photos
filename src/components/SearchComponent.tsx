@@ -4,7 +4,7 @@ import { connect } from 'react-redux';
 
 import { fetchSearchResults, clearPreviousSearches } from '../actions/search';
 
-import './SearchComponent.css';
+import './SearchComponent.scss';
 
 interface MapDispatchToProps {
     fetchSearchResultsDispatch: (query: string) => void;

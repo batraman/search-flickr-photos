@@ -10,7 +10,7 @@ import PageNotFound from './components/PageNotFound';
 import search from './reducers/search';
 
 import 'bootstrap/dist/css/bootstrap.css';
-import './App.css';
+import './App.scss';
 
 const middlewares = [thunk];
 

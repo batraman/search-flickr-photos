@@ -1,26 +1,6 @@
 # Search Flickr Photos
 
-Bootstrapped using a custom build of CRA - ejected to handle custom env.js file.
-
-This project uses an env.js file from which sensitive data like API_KEY and urls are populated.
-This helps maintain different env.js file on the server and local (it is in .gitignore) and manage
-staging and production builds easily. 
-
-Here's a sample env.js file you must put in the project root in order to run the project.
-
-Sample env.js
-```
-const ENV = {
-    // staging environment
-    "NODE_ENV"      : "staging",
-    "BASE_URL"      : "https://api.flickr.com/",
-    "PUBLIC_URL"    : "YOUR_PUBLIC_URL",
-    "API_KEY"       : "YOUR_API_KEY",
-    "TIME_OUT"      : 24000
-};
-
-module.exports = ENV;
-```
+Bootstrapped using CRA
 
 ## To Do:
 

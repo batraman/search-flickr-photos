@@ -5,7 +5,7 @@ import { lookupPreviousSearches } from '../actions/search';
 
 import SearchResults from '../components/SearchResults';
 
-import './SearchPage.css';
+import './SearchPage.scss';
 
 interface MapDispatchToProps {
     lookupPreviousSearchesDispatch: () => void;
